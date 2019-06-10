@@ -10,6 +10,5 @@ export class AppComponent {
 
   changeDisplay(val:string){
     this.display=val;
-    console.log(val);
   }
 }

@@ -11,6 +11,7 @@ import { RecipeItemComponent } from './recipe-book/recipe-list/recipe-item/recip
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ShoppingService } from './shared/shopping.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ShoppingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
