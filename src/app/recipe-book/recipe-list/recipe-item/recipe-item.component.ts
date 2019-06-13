@@ -10,11 +10,8 @@ import { RecipesService } from 'src/app/shared/recipes.service';
 export class RecipeItemComponent {
 
   @Input() recipe:Recipe;
+  @Input() index:number;
 
   constructor(private recipesService:RecipesService) { }
-
-  chooseRecipe(){
-    this.recipesService.chosenRecipe.emit(this.recipe);
-  }
 
 }
