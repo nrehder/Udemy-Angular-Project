@@ -1,5 +1,5 @@
 import { Recipe } from '../recipe-book/recipe.model';
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Ingredient } from './ingredient.model';
 import { ShoppingService } from './shopping.service';
 
@@ -40,8 +40,6 @@ export class RecipesService{
     getRecipe(id:number){
         return this.recipes[id];
     }
-
-    chosenRecipe = new EventEmitter<Recipe>();
 
     addToShoppingList(ing:Ingredient[]){
         this.shopService.addIngredients(ing);
