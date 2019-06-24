@@ -5,10 +5,11 @@ import { RecipeStartComponent } from "./recipe-book/recipe-start/recipe-start.co
 import { RecipeDetailComponent } from "./recipe-book/recipe-detail/recipe-detail.component";
 import { RecipeEditComponent } from "./recipe-book/recipe-edit/recipe-edit.component";
 import { NgModule } from '@angular/core';
+import { RecipesResolverService } from './recipe-book/recipes-resolver.service';
 
 const appRoutes:Routes = [
     { path:"shopping-list", component:ShoppingListComponent },
-    { path:"recipes", component:RecipeBookComponent, children:[
+    { path:"recipes", component:RecipeBookComponent,resolve:[RecipesResolverService], children:[
       { path:"", component:RecipeStartComponent },
       { path:"new", component:RecipeEditComponent },
       { path:":id", component:RecipeDetailComponent },

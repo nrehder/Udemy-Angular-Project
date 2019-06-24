@@ -12,33 +12,41 @@ export class RecipesService{
 
     constructor(private shopService:ShoppingService){}
     
-    private recipes:Recipe[] = [
-        new Recipe(
-            "Hamburger",
-            "Nice, juicy hamburger!",
-            "https://cdn.pixabay.com/photo/2017/12/09/23/04/bread-3008950_960_720.jpg",
-            [
-                new Ingredient('Ground Beef', 1),
-                new Ingredient('Buns', 1),
-                new Ingredient('Onion', 1),
-                new Ingredient('Lettuce', 1),
-                new Ingredient('Pickles', 1)
-            ]),
-        new Recipe(
-            "Penne Alla Vodka",
-            "Al dente penne pasta with creamy vodka sauce.",
-            "https://upload.wikimedia.org/wikipedia/commons/8/82/PenneAllaVodka.jpg",
-            [
-                new Ingredient('Penne Pasta', 1),
-                new Ingredient('Crushed Tomatoes', 3),
-                new Ingredient('Pureed Tomatoes', 3),
-                new Ingredient('Heavy Cream', 1),
-                new Ingredient('Vodka', 1)
-            ])
-    ];
+    // private recipes:Recipe[] = [
+    //     new Recipe(
+    //         "Hamburger",
+    //         "Nice, juicy hamburger!",
+    //         "https://cdn.pixabay.com/photo/2017/12/09/23/04/bread-3008950_960_720.jpg",
+    //         [
+    //             new Ingredient('Ground Beef', 1),
+    //             new Ingredient('Buns', 1),
+    //             new Ingredient('Onion', 1),
+    //             new Ingredient('Lettuce', 1),
+    //             new Ingredient('Pickles', 1)
+    //         ]),
+    //     new Recipe(
+    //         "Penne Alla Vodka",
+    //         "Al dente penne pasta with creamy vodka sauce.",
+    //         "https://upload.wikimedia.org/wikipedia/commons/8/82/PenneAllaVodka.jpg",
+    //         [
+    //             new Ingredient('Penne Pasta', 1),
+    //             new Ingredient('Crushed Tomatoes', 3),
+    //             new Ingredient('Pureed Tomatoes', 3),
+    //             new Ingredient('Heavy Cream', 1),
+    //             new Ingredient('Vodka', 1)
+    //         ])'
+        
+    // ];
+
+    private recipes:Recipe[] = [];
 
     getRecipes(){
         return this.recipes.slice();
+    }
+
+    setRecipes(recipes:Recipe[]){
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
     }
 
     getRecipe(id:number){
