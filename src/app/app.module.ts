@@ -1,66 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipeBookComponent } from './recipe-book/recipe-book.component';
-import { RecipeListComponent } from './recipe-book/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipe-book/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipe-book/recipe-list/recipe-item/recipe-item.component';
-import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective } from './shared/dropdown.directive';
-import { ShoppingService } from './shared/shopping.service';
-import { RouterModule } from "@angular/router";
-import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component'
-import { AppRoutingModule } from './app-routing.module';
-import { RecipesService } from './shared/recipes.service';
-import { AuthComponent } from './Auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { SharedModule } from './shared/shared.module';
 import { AuthInterceptorService } from './Auth/auth-interceptor.service';
-import { AlertComponent } from './shared/alert/alert.component';
-import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    RecipeBookComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    RecipeEditComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    DropdownDirective,
-    RecipeStartComponent,
-    AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceholderDirective
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    RouterModule,
+    HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    SharedModule
   ],
   providers: [
-    ShoppingService,
-    RecipesService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass:AuthInterceptorService,
       multi:true}
   ],
-  bootstrap: [AppComponent],
-  entryComponents:[
-    AlertComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

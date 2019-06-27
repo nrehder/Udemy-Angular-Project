@@ -4,7 +4,7 @@ import { Ingredient } from './ingredient.model';
 import { ShoppingService } from './shopping.service';
 import { Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({providedIn:'root'})
 
 export class RecipesService{
 
