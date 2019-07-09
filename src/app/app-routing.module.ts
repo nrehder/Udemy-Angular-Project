@@ -11,7 +11,7 @@ const appRoutes:Routes = [
     path:'recipes', loadChildren: './recipe-book/recipes.module#RecipesModule'
   },
   {
-    path:'login', loadChildren: './Auth/auth.module#AuthModule'
+    path:'login', loadChildren: './auth/auth.module#AuthModule'
   },
   {
     path:'shopping-list', loadChildren: './shopping-list/shopping-list.module#ShoppingListModule'
