@@ -1,27 +1,16 @@
-# Project
+# Udemy Angular Course Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+Course website: https://www.udemy.com/the-complete-guide-to-angular-2
 
-## Development server
+## How to use:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Make sure you are using the latest version of angular CLI
+Run "npm install" inside this project folder to install all dependencies.
+Run "ng serve --open" to start the dev server and automaticall open in browser
 
-## Code scaffolding
+## Features:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Course design was a recipe book saved to a realtime database.  Code found here implements NgRx to store data locally.  Issues I had with the design, the shopping list is not saved to the database and all users access the same data.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Prior to the NgRx portion of the course, I changed the database to store the users data based on their email address, as well as saving the shopping list.  A working example of that can be found: https://udemy-angular-project-60e63.web.app/
